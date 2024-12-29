@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+class Main {
+    public static int max(int x, int y) {
+        // Return the greater of two numbers
+        if (x > y) {
+            return x;
+        } else {
+            return y;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input the size of the array
+        System.out.println("Enter the number of elements in the array:");
+        int n = sc.nextInt();
+
+        // Input the array elements
+        int[] arr = new int[n];
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Find the maximum element in the array
+        int maxValue = arr[0];
+        for (int i = 1; i < n; i++) {
+            maxValue = max(maxValue, arr[i]); // Compare current max with next element
+        }
+
+        // Print the maximum value
+        System.out.println("The maximum value in the array is: " + maxValue);
+    }
+}
